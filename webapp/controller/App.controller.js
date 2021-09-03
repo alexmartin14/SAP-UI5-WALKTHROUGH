@@ -1,11 +1,24 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller",
-    "sap/m/MessageToast"
- ], function (Controller, MessageToast) {
-    "use strict";
-    return Controller.extend("sap.ui.demo.walkthrough.controller.App", {
-       onShowHello : function () {
-          MessageToast.show("HelloWorld");
-       }
-    });
- });
+   "sap/ui/core/mvc/Controller",
+   "sap/m/MessageToast",
+   "sap/ui/model/json/JSONModel"
+], function (Controller, MessageToast, JSONModel) {
+   "use strict";
+   return Controller.extend("sap.ui.demo.walkthrough.controller.App", {
+      // onInit is one of SAPUI5's lifecycle methods
+      onInit : function () {
+         // set data model on view
+         var oData = {
+            recipient : {
+               name : "World"
+            }
+         };
+         // initiate a JSON model 
+         var oModel = new JSONModel(oData);
+         this.getView().setModel(oModel);
+      },
+      onShowHello : function () {
+         MessageToast.show("Hello World");
+      }
+   });
+});
