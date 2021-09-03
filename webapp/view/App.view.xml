@@ -2,11 +2,11 @@
    controllerName="sap.ui.demo.walkthrough.controller.App"
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc">
+   <!-- Use data binding to connect the button text to the showHelloButtonText -->
    <Button
-      text="Say Hello"
+      text="{i18n>showHelloButtonText}"
       press=".onShowHello"/>
-   <!-- recipient/name is from the controller -->
-   <Input 
+   <Input
       value="{/recipient/name}"
       description="Hello {/recipient/name}"
       valueLiveUpdate="true"
