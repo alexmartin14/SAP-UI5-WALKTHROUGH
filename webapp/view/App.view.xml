@@ -6,32 +6,11 @@
    <!-- The shell control is the outermost control of our app and automatically displays a so-called letterbox, if the screen size is larger than a certain width.  -->
 	<Shell>
 
-		<App>
+		<App class="myAppDemoWT">
 			<pages>
 				<Page title="{i18n>homePageTitle}">
 					<content>
-               <!-- Add the CSS class sapUiResponsiveMargin that will add some space around the panel and set the width to auto instead of 100% -->
-						<Panel
-							headerText="{i18n>helloPanelTitle}"
-                     class="sapUiResponsiveMargin"
-							width="auto">
-							<content>
-                     <!-- Add space between the button and the input field by adding class sapUiSmallMarginEnd to the button -->
-								<Button
-									text="{i18n>showHelloButtonText}"
-									press=".onShowHello"
-                           class="sapUiSmallMarginEnd"/>
-								<Input
-									value="{/recipient/name}"
-									description="Hello {/recipient/name}"
-									valueLiveUpdate="true"
-									width="60%"/>
-                        <!-- To format the output text individually, we remove the description from the input field and add a new Text control with the same value -->
-                        <Text
-									text="Hello {/recipient/name}"
-									class="sapUiSmallMargin"/>
-							</content>
-						</Panel>
+              			<mvc:XMLView viewName="sap.ui.demo.walkthrough.view.HelloPanel"/>
 					</content>
 				</Page>
 			</pages>
