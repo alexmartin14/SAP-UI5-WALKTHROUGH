@@ -3,25 +3,31 @@
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc">
  <!-- Add the CSS class sapUiResponsiveMargin that will add some space around the panel and set the width to auto instead of 100% -->
-						<Panel
-							headerText="{i18n>helloPanelTitle}"
-                     class="sapUiResponsiveMargin"
-							width="auto">
-							<content>
-                     <!-- Add space between the button and the input field by adding class sapUiSmallMarginEnd to the button -->
-								<Button
-									text="{i18n>showHelloButtonText}"
-									press=".onShowHello"
-                           class="myCustomButton"/>
-								<Input
-									value="{/recipient/name}"
-									description="Hello {/recipient/name}"
-									valueLiveUpdate="true"
-									width="60%"/>
-                        <!-- To format the output text individually, we remove the description from the input field and add a new Text control with the same value -->
-                        <FormattedText
-									htmlText="Hello {/recipient/name}"
-									class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
-							</content>
-						</Panel>
+	<Panel
+		headerText="{i18n>helloPanelTitle}"
+        class="sapUiResponsiveMargin"
+		width="auto">
+			<content>
+				<Button
+         			id="helloDialogButton"
+        			text="{i18n>openDialogButtonText}"
+					press=".onOpenDialog"
+					class="sapUiSmallMarginEnd"/>
+                <!-- Add space between the button and the input field by adding class sapUiSmallMarginEnd to the button -->
+				<Button
+					text="{i18n>showHelloButtonText}"
+					press=".onShowHello"
+                	class="myCustomButton"/>
+								
+				<Input
+					value="{/recipient/name}"
+					description="Hello {/recipient/name}"
+					valueLiveUpdate="true"
+					width="60%"/>
+                <!-- To format the output text individually, we remove the description from the input field and add a new Text control with the same value -->
+                <FormattedText
+					htmlText="Hello {/recipient/name}"
+					class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
+			</content>
+	</Panel>
 </mvc:View>
