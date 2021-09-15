@@ -38,14 +38,11 @@
             "supportedLocales": [""],
             "fallbackLocale": ""
           }
-        }
       },
-      "resources": {
-        "css": [
-        {
-          "uri": "css/style.css"
-        }
-        ]
-      }
-    }
+	    "invoice": {
+	  	"type": "sap.ui.model.json.JSONModel",
+		  "uri": "Invoices.json"
+	  }
+   }
   }
+}
